@@ -55,14 +55,12 @@ function _log() {
 }
 
 function _CTX() {
-    local ctx ctx_name ctx_type script_name
+    local ctx ctx_name ctx_type
 
     ctx_name="${FUNCNAME[2]}"
 
     if [[ $ctx_name == main ]]; then
-        script_name=$(basename "$0")
-        script_name="${script_name%.*}"
-        ctx_name=$script_name
+        ctx_name=$0
         ctx_type="script"
     else
         ctx_type="function"

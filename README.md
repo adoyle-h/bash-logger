@@ -10,10 +10,11 @@ TODO: Available as a [bpkg](http://www.bpkg.io/)
 bpkg install adoyle/shell-logger
 ```
 
-## Usage
+## Example
 
 ```sh
-# import the script
+# file: ./test/logger.sh
+# import the logger script
 source "<path>/logger.sh ""
 
 function foo() {
@@ -36,13 +37,13 @@ EXIT
 It will print:
 
 ```
-[2017/06/30 15:27:21][DEBUG](ENTER) script: logger
-[2017/06/30 15:27:21][DEBUG](ENTER) function: foo
-[2017/06/30 15:27:21][DEBUG](foo) DEBUG message
-[2017/06/30 15:27:21][INFO](foo) INFO message
+[2017/06/30 15:36:07][DEBUG](ENTER) script: ./test/logger.sh
+[2017/06/30 15:36:07][DEBUG](ENTER) function: foo
+[2017/06/30 15:36:07][DEBUG](foo) DEBUG message
+[2017/06/30 15:36:07][INFO](foo) INFO message
 echo message
-[2017/06/30 15:27:21][WARN](foo) WARN message
-[2017/06/30 15:27:21][ERROR](foo) ERROR message
-[2017/06/30 15:27:21][DEBUG](EXIT) function: foo
-[2017/06/30 15:27:21][DEBUG](EXIT) script: logger
+[2017/06/30 15:36:07][WARN](foo) WARN message
+[2017/06/30 15:36:07][ERROR](foo) ERROR message
+[2017/06/30 15:36:07][DEBUG](EXIT) function: foo
+[2017/06/30 15:36:07][DEBUG](EXIT) script: ./test/logger.sh
 ```
