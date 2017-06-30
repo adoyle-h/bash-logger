@@ -6,7 +6,7 @@
 # Author: ADoyle <adoyle.h@gmail.com>
 # First Created: 2017-06-30T07:09:59Z
 # Last Modified: 2017-06-30T07:09:59Z
-# Version: 0.1.0
+# Version: 0.2.0
 # Bash Version: 4.x
 # Source: https://github.com/adoyle-h/bash-logger
 # Inspired by:
