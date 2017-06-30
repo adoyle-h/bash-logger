@@ -7,7 +7,7 @@ set -o pipefail
 
 CUR_FILE_DIR="$(cd "$( dirname "$0" )" && pwd)"
 
-source "$CUR_FILE_DIR"/../Docker-assets/logger.sh ""
+source "$CUR_FILE_DIR"/../src/logger.sh ""
 
 function foo() {
     ENTER
