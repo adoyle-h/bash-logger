@@ -2,6 +2,19 @@
 
 A simple bash logger utility
 
+## TOC
+
+<!-- MarkdownTOC GFM -->
+
+- [Install](#install)
+- [Usage](#usage)
+- [API](#api)
+    - [ENTER/EXIT](#enterexit)
+    - [DEBUG/INFO/WARN/ERROR](#debuginfowarnerror)
+- [Example](#example)
+
+<!-- /MarkdownTOC -->
+
 ## Install
 
 TODO: Available as a [bpkg](http://www.bpkg.io/)
@@ -9,6 +22,44 @@ TODO: Available as a [bpkg](http://www.bpkg.io/)
 ```sh
 bpkg install adoyle/shell-logger
 ```
+
+## Usage
+
+Only print message to `stdout`: `source logger.sh ""`.
+
+Print message to `stdout` and write it to a file: `source logger.sh "<output-path>"`.
+
+## API
+
+### ENTER/EXIT
+
+Used in script entry and final exit.
+Used in function entry and final exit.
+
+```sh
+ENTER "message"
+```
+
+printed format: `[<local-date-time>][DEBUG](<ENTER-or-EXIT>) <script-or-function>: <script-path-or-function-name>`
+
+### DEBUG/INFO/WARN/ERROR
+
+Support 4 levels:
+
+- DEBUG
+- INFO
+- WARN
+- ERROR
+
+Use `DEBUG` as example.
+
+```sh
+DEBUG "message"
+```
+
+printed format: `[<local-date-time>][<level>](<main-or-method-name>) <message>`
+
+
 
 ## Example
 
