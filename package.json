@@ -1,0 +1,6 @@
+{
+  "name": "bash-logger",
+  "version": "0.1.0",
+  "description": "A simple bash logger utility",
+  "scripts": [ "src/logger.sh" ]
+}
