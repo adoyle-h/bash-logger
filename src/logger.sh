@@ -4,6 +4,7 @@
 # Filename: logger.sh
 # Description: A simple bash logger utility
 # Author: ADoyle <adoyle.h@gmail.com>
+# LICENSE: Apache License, Version 2.0
 # First Created: 2017-06-30T07:09:59Z
 # Last Modified: 2017-06-30T07:09:59Z
 # Version: 0.2.0

@@ -12,6 +12,8 @@ A simple bash logger utility
     - [ENTER/EXIT](#enterexit)
     - [DEBUG/INFO/WARN/ERROR](#debuginfowarnerror)
 - [Example](#example)
+- [Versioning](#versioning)
+- [Copyright and License](#copyright-and-license)
 
 <!-- /MarkdownTOC -->
 
@@ -98,3 +100,26 @@ echo message
 [2017/06/30 15:36:07][DEBUG](EXIT) function: foo
 [2017/06/30 15:36:07][DEBUG](EXIT) script: ./test/logger.sh
 ```
+
+## Versioning
+
+The versioning follows the rules of SemVer 2.0.0.
+
+**Attentions**: anything may have **BREAKING CHANGES** at **ANY TIME** when major version is zero (0.y.z), which is for initial development and the public API should be considered unstable.
+
+For more information on SemVer, please visit http://semver.org/.
+
+
+## Copyright and License
+
+Copyright (c) 2017 ADoyle. The project is licensed under the **Apache License Version 2.0**.
+
+See the [LICENSE][] file for the specific language governing permissions and limitations under the License.
+
+See the [NOTICE][] file distributed with this work for additional information regarding copyright ownership.
+
+
+<!-- Links -->
+
+[LICENSE]: ./LICENSE
+[NOTICE]: ./NOTICE
