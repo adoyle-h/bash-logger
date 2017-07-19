@@ -39,8 +39,8 @@ function _echo() {
     fi
 }
 
-function _date_time() {
-    date +"%Y/%m/%d %H:%M:%S"
+function _local_date_time() {
+    date +"%Y/%m/%d %H:%M:%S.%3N"
 }
 
 function _utc_date_time() {
@@ -51,7 +51,7 @@ function _log() {
     local function_name date_time msg level
     msg="$1"
     level="${2:-${FUNCNAME[1]}}"
-    date_time=$(_date_time)
+    date_time=$(_local_date_time)
     function_name="${FUNCNAME[2]}"
     _echo "[$date_time][$level]($function_name) $msg"
 }

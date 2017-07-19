@@ -12,6 +12,7 @@ A simple bash logger utility
     - [ENTER/EXIT](#enterexit)
     - [DEBUG/INFO/WARN/ERROR](#debuginfowarnerror)
 - [Example](#example)
+    - [Output](#output)
 - [Versioning](#versioning)
 - [Copyright and License](#copyright-and-license)
 
@@ -87,19 +88,37 @@ foo
 EXIT
 ```
 
-It will print:
+### Output
+
+(If GNU-date referenced) It will print:
 
 ```
-[2017/06/30 15:36:07][DEBUG](ENTER) script: ./test/logger.sh
-[2017/06/30 15:36:07][DEBUG](ENTER) function: foo
-[2017/06/30 15:36:07][DEBUG](foo) DEBUG message
-[2017/06/30 15:36:07][INFO](foo) INFO message
+[2017/07/19 13:10:54.539][DEBUG](ENTER) script: ./test/logger.sh
+[2017/07/19 13:10:54.547][DEBUG](ENTER) function: foo
+[2017/07/19 13:10:54.555][DEBUG](foo) DEBUG message
+[2017/07/19 13:10:54.562][INFO](foo) INFO message
 echo message
-[2017/06/30 15:36:07][WARN](foo) WARN message
-[2017/06/30 15:36:07][ERROR](foo) ERROR message
-[2017/06/30 15:36:07][DEBUG](EXIT) function: foo
-[2017/06/30 15:36:07][DEBUG](EXIT) script: ./test/logger.sh
+[2017/07/19 13:10:54.569][WARN](foo) WARN message
+[2017/07/19 13:10:54.575][ERROR](foo) ERROR message
+[2017/07/19 13:10:54.582][DEBUG](EXIT) function: foo
+[2017/07/19 13:10:54.588][DEBUG](EXIT) script: ./test/logger.sh
 ```
+
+(If Mac-date referenced) It will print:
+
+```
+[2017/07/19 13:11:14.3N][DEBUG](ENTER) script: ./test/logger.sh
+[2017/07/19 13:11:14.3N][DEBUG](ENTER) function: foo
+[2017/07/19 13:11:14.3N][DEBUG](foo) DEBUG message
+[2017/07/19 13:11:14.3N][INFO](foo) INFO message
+echo message
+[2017/07/19 13:11:14.3N][WARN](foo) WARN message
+[2017/07/19 13:11:14.3N][ERROR](foo) ERROR message
+[2017/07/19 13:11:14.3N][DEBUG](EXIT) function: foo
+[2017/07/19 13:11:14.3N][DEBUG](EXIT) script: ./test/logger.sh
+```
+
+So GNU-date is recommended.
 
 ## Versioning
 
