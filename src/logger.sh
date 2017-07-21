@@ -9,7 +9,8 @@
 # Last Modified: 2017-06-30T07:09:59Z
 # Version: 0.2.0
 # Bash Version: 4.x
-# Source: https://github.com/adoyle-h/bash-logger
+# Source: https://github.com/adoyle-h/bash-logger/blob/v0.2.0/src/logger.sh
+# Project: https://github.com/adoyle-h/bash-logger
 # Inspired by:
 #   - http://www.cubicrace.com/2016/03/efficient-logging-mechnism-in-shell.html
 
