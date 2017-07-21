@@ -19,7 +19,10 @@
 #                           initialization                            #
 #######################################################################
 
-LOG_TARGET=${1:-}
+readonly LOG_TARGET=${1:-}
+readonly LOG_ENABLED=${2:-}
+readonly LOG_TOGGLES=${3:-}
+readonly LOG_ALIASES=${4:-}
 
 if [[ -n "$LOG_TARGET" ]] ;then
     touch "$LOG_TARGET"
@@ -73,35 +76,44 @@ function _CTX() {
     echo "${ctx[@]}"
 }
 
+function _check_enabled() {
+    local
+}
 
 #######################################################################
 #                           public methods                            #
 #######################################################################
 
 function ENTER() {
+    _check_enabled || return 0
     local ctx ctx_name date_time
     ctx=($(_CTX))
     DEBUG "${ctx[1]}: ${ctx[0]}"
 }
 
 function EXIT() {
+    _check_enabled || return 0
     local ctx date_time
     ctx=($(_CTX))
     DEBUG "${ctx[1]}: ${ctx[0]}"
 }
 
 function DEBUG() {
+    _check_enabled || return 0
     _log "$1"
 }
 
 function INFO() {
+    _check_enabled || return 0
     _log "$1"
 }
 
 function WARN() {
+    _check_enabled || return 0
     _log "$1"
 }
 
 function ERROR() {
+    _check_enabled || return 0
     _log "$1"
 }
