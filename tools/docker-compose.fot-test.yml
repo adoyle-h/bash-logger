@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  sample:
+    image: docker-shpec
+    build: ./docker-shpec
+    volumes:
+      - ../:/shpec
