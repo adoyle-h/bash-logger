@@ -18,7 +18,7 @@
 #                           initialization                            #
 #######################################################################
 
-LOG_TARGET=${1-}
+LOG_TARGET=${1:-}
 
 if [[ -n "$LOG_TARGET" ]] ;then
     touch "$LOG_TARGET"
@@ -49,7 +49,7 @@ function _utc_date_time() {
 function _log() {
     local function_name date_time msg level
     msg="$1"
-    level="${2-${FUNCNAME[1]}}"
+    level="${2:-${FUNCNAME[1]}}"
     date_time=$(_date_time)
     function_name="${FUNCNAME[2]}"
     _echo "[$date_time][$level]($function_name) $msg"
