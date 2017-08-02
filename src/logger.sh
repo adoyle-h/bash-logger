@@ -24,6 +24,13 @@ readonly LOG_ENABLED=${2:-}
 readonly LOG_TOGGLES=${3:-}
 readonly LOG_ALIASES=${4:-}
 
+echo "[eeeee] $0 $*"
+
+readonly _SCRIPT_DIR="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
+readonly _BASENAME="$(basename "${_FILE}" .sh)"
+
+source "$_SCRIPT_DIR"/parse-args.sh "$@"
+
 if [[ -n "$LOG_TARGET" ]] ;then
     touch "$LOG_TARGET"
 fi
@@ -77,7 +84,7 @@ function _CTX() {
 }
 
 function _check_enabled() {
-    local
+    [[ $LOG_ENABLED == yes ]]
 }
 
 #######################################################################
