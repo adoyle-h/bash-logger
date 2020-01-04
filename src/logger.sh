@@ -15,6 +15,25 @@
 
 
 #######################################################################
+#                           Constants                                 #
+#######################################################################
+BASH_COLOR_CODE_RED="\e[31m"
+BASH_COLOR_CODE_YELLOW="\e[33m"
+BASH_COLOR_CODE_GREEN="\e[32m"
+BASH_COLOR_CODE_BLUE="\e[34m"
+BASH_COLOR_CODE_DEFAULT="\e[39m"
+
+declare -A ARRAY_LEVEL_COLOR=( \
+	[ENTER]=$BASH_COLOR_CODE_DEFAULT \
+	[EXIT]=$BASH_COLOR_CODE_DEFAULT \
+	[DEBUG]=$BASH_COLOR_CODE_DEFAULT \
+	[INFO]=$BASH_COLOR_CODE_BLUE \
+	[WARN]=$BASH_COLOR_CODE_YELLOW \
+	[ERROR]=$BASH_COLOR_CODE_RED \
+	[SUCCESS]=$BASH_COLOR_CODE_GREEN \
+)
+
+#######################################################################
 #                           initialization                            #
 #######################################################################
 
@@ -30,11 +49,14 @@ fi
 #######################################################################
 
 function _echo() {
-    local msg=$1
+    local msg=$2
+	local level=$1
+
     if [[ -n "$LOG_TARGET" ]] ;then
         echo "$msg" | tee >> "$LOG_TARGET"
     else
-        echo "$msg"
+		local levelColor=$(_getLevelColor $level)
+        echo -e "${levelColor}${msg}${BASH_COLOR_CODE_DEFAULT}"
     fi
 }
 
@@ -52,7 +74,7 @@ function _log() {
     level="${2-${FUNCNAME[1]}}"
     date_time=$(_date_time)
     function_name="${FUNCNAME[2]}"
-    _echo "[$date_time][$level]($function_name) $msg"
+    _echo $level "[$date_time][$level]($function_name) $msg" 
 }
 
 function _CTX() {
@@ -72,7 +94,28 @@ function _CTX() {
     echo "${ctx[@]}"
 }
 
+function _levelExists(){
+	local level=$1
+	if [[ "${ARRAY_LEVEL_COLOR[$level]+isset}" ]]; then
+        return 0
+    else
+		return 1
+	fi
+}
 
+function _getLevelColor(){
+	local level=$1
+	_levelExists $level
+	local levelExists=$?
+	
+	if [[ "$levelExists" == "0" ]]; then
+		echo ${ARRAY_LEVEL_COLOR["$level"]}
+	else
+		echo $BASH_COLOR_CODE_DEFAULT
+	fi
+
+	
+}
 #######################################################################
 #                           public methods                            #
 #######################################################################
@@ -104,3 +147,8 @@ function WARN() {
 function ERROR() {
     _log "$1"
 }
+
+function SUCCESS() {
+    _log "$1"
+}
+

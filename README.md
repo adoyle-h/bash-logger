@@ -27,9 +27,12 @@ bpkg install adoyle/shell-logger
 
 ## Usage
 
-Only print message to `stdout`: `source logger.sh ""`.
+Only print message to `stdout`: `source logger.sh ""`. 
+*Note: It will print lines in color according the level (e.g. ERROR in red, WARN in orange and so on)*
 
 Print message to `stdout` and write it to a file: `source logger.sh "<output-path>"`.
+*Note: No color of line in this mode*
+
 
 ## API
 
