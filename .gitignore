@@ -1,4 +1,5 @@
 ####### Project Ignores #######
+test.log
 !.gitkeep
 release/
 gh-pages/

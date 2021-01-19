@@ -27,7 +27,7 @@ bpkg install adoyle/shell-logger
 
 ## Usage
 
-Only print message to `stdout`: `source logger.sh ""`.
+Only print message to `stdout`: `source logger.sh`.
 
 Print message to `stdout` and write it to a file: `source logger.sh "<output-path>"`.
 

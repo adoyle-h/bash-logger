@@ -8,7 +8,7 @@ set -o errtrace
 
 readonly SCRIPT_DIR="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
-source "$SCRIPT_DIR"/../src/logger.sh
+source "$SCRIPT_DIR"/../src/logger.sh "test.log"
 
 function foo() {
     ENTER

@@ -6,8 +6,8 @@
 # Author: ADoyle <adoyle.h@gmail.com>
 # LICENSE: Apache License, Version 2.0
 # First Created: 2017-06-30T07:09:59Z
-# Last Modified: 2017-06-30T07:09:59Z
-# Version: 0.2.0
+# Last Modified: 2021-01-19T11:04:08Z
+# Version: 0.2.1
 # Bash Version: 4.x
 # Source: https://github.com/adoyle-h/bash-logger/blob/v0.2.0/src/logger.sh
 # Project: https://github.com/adoyle-h/bash-logger
@@ -30,14 +30,15 @@ fi
 #                           private methods                           #
 #######################################################################
 
-function _echo() {
-    local msg=$1
-    if [[ -n "$LOG_TARGET" ]] ;then
-        echo "$msg" | tee >> "$LOG_TARGET"
-    else
-        echo "$msg"
-    fi
-}
+if [[ -n "$LOG_TARGET" ]] ;then
+  function _echo() {
+    echo "$1" | tee -a "$LOG_TARGET"
+  }
+else
+  function _echo() {
+    echo "$1"
+  }
+fi
 
 function _date_time() {
     date +"%Y/%m/%d %H:%M:%S"
