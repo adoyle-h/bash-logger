@@ -1,6 +1,6 @@
 # bash-logger
 
-A simple bash logger utility
+A simple bash logger utility.
 
 ## TOC
 
@@ -19,11 +19,7 @@ A simple bash logger utility
 
 ## Install
 
-TODO: Available as a [bpkg](http://www.bpkg.io/)
-
-```sh
-bpkg install adoyle/shell-logger
-```
+Just download the [logger.sh](./src/logger.sh) to local.
 
 ## Usage
 
@@ -112,7 +108,7 @@ For more information on SemVer, please visit http://semver.org/.
 
 ## Copyright and License
 
-Copyright (c) 2017 ADoyle. The project is licensed under the **Apache License Version 2.0**.
+Copyright 2017-2021 ADoyle (adoyle.h@gmail.com). The project is licensed under the **Apache License Version 2.0**.
 
 See the [LICENSE][] file for the specific language governing permissions and limitations under the License.
 
